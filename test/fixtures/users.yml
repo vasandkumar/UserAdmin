@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sapid: 1
+  fname: MyString
+  lname: MyString
+  email: MyString
+  mobile: MyString
+  username: MyString
+
+two:
+  sapid: 1
+  fname: MyString
+  lname: MyString
+  email: MyString
+  mobile: MyString
+  username: MyString

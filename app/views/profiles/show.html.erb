@@ -1,0 +1,35 @@
+<div class="container">
+  <p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @profile.user_id %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @profile.address %>
+</p>
+
+<p>
+  <strong>Bio:</strong>
+  <%= @profile.bio %>
+</p>
+
+<p>
+  <strong>Gender:</strong>
+  <%= @profile.gender %>
+</p>
+
+<p>
+  <strong>Placeofbirth:</strong>
+  <%= @profile.placeofbirth %>
+</p>
+
+<p>
+  <strong>Countryofbirth:</strong>
+  <%= @profile.countryofbirth %>
+</p>
+
+<%= link_to 'Edit', edit_user_profile_path(id: @profile.id), style: 'margin-left: 45%', class: 'btn btn-default' %> |
+<%= link_to 'Back', user_profiles_path, class: 'btn btn-default' %>

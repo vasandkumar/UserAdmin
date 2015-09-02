@@ -1,0 +1,55 @@
+<%= form_for([@user, @profile],:html => {:class => "form-horizontal"} ) do |f| %>
+  <% if @profile.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@profile.errors.count, "error") %> prohibited this profile from being saved:</h2>
+
+      <ul>
+      <% @profile.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :user_id, :class => 'col-sm-2 control-label' %>
+    <div class="col-sm-2">
+    <%= f.number_field :user_id, :readonly => true %>
+  </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :address, :class => 'col-sm-2 control-label' %>
+    <div class="col-sm-2">
+    <%= f.text_area :address %>
+  </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :bio, :class => 'col-sm-2 control-label' %>
+    <div class="col-sm-2">
+    <%= f.text_area :bio %>
+  </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :gender, :class => 'col-sm-2 control-label' %>
+    <div class="col-sm-2">
+    <%= f.text_field :gender %>
+  </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :placeofbirth, :class => 'col-sm-2 control-label' %>
+    <div class="col-sm-2">
+    <%= f.text_field :placeofbirth %>
+  </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :countryofbirth, :class => 'col-sm-2 control-label' %>
+    <div class="col-sm-2">
+    <%= f.text_field :countryofbirth %>
+  </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+    <%= f.submit %>
+  </div>
+  </div>
+<% end %>

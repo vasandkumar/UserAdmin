@@ -1,0 +1,11 @@
+class CreatePics < ActiveRecord::Migration
+  def change
+    create_table :pics do |t|
+      t.string :imageuri
+      t.integer :user_id
+
+      t.timestamps null: false
+    end
+    add_index :pics, :user_id
+  end
+end
