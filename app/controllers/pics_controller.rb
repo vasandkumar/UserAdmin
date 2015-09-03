@@ -7,7 +7,6 @@ class PicsController < ApplicationController
   def index
     @pics = @user.pics.all
   end
-
   # GET /pics/1
   # GET /pics/1.json
   def show

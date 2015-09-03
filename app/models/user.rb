@@ -8,7 +8,7 @@ validates :mobile, presence: true, uniqueness: true, :length => { :maximum => 12
 validates :username, presence: true, uniqueness: true
 
 
-has_many :pics, :dependent => :destroy
+has_many :pics,-> { order 'created_at desc' }, :dependent => :destroy
 has_one :profile, :dependent => :destroy
 
 end
