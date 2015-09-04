@@ -4,6 +4,7 @@
       <a class="navbar-brand" href="#">
          <a class="navbar-brand" href="#"><%= @user.fname %>'s Pics</a>
       </a>
+      
     </div>
   </div>
 </nav>
@@ -29,7 +30,7 @@
   <% end %>
 </div>
   
-
+<div class="center-block" style="margin-left:45%"><%= will_paginate @users %></div>
 <a href="<%= new_user_pic_path %>" class="btn btn-default" style="margin-left:40%;" role="button"> Add new Pics</a> | 
 <a href="<%= users_path %>" class="btn btn-default" role="button"> Back</a>
 </div>

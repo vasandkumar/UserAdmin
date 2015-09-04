@@ -5,7 +5,11 @@ class PicsController < ApplicationController
   # GET /pics
   # GET /pics.json
   def index
-    @pics = @user.pics.all
+    if params[:search]
+      @pics = @user.pics.paginate(:page => params[:page], :per_page => 10).where("user_id = #{@user.id} AND imageuri iLIKE ? ","%#{params[:search]}%")
+    else
+      @pics = @user.pics.all.paginate(:page => params[:page], :per_page => 10)
+    end
   end
   # GET /pics/1
   # GET /pics/1.json

@@ -4,6 +4,12 @@
       <a class="navbar-brand" href="#">
          <a class="navbar-brand" href="#">Listing Users</a>
       </a>
+      <%= form_tag(users_path, :method => "get", id: "search-form", role: 'search', class: 'navbar-form navbar-left') do %>
+        <div class="form-group">
+          <%= text_field_tag :search, params[:search], placeholder: "Search Users", class: 'form-control' %>
+          </div>
+        <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+      <% end %>
     </div>
   </div>
 </nav>
@@ -51,8 +57,11 @@
 
 
 <br>
-
+<% if params[:search].present? %>
+<a href="<%= users_path %>" class="btn btn-default" style="margin-left:46%;" role="button">Back</a>
+<% else %>
 <a href="<%= new_user_path %>" class="btn btn-default" style="margin-left:46%;" role="button">Add New User</a>
+<% end %>
 
 </div>
 </div>
